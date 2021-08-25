@@ -11,21 +11,32 @@
         - Stabilire chi vince a seconda del numero piu altro
 */
 
+// Esercizio A 
 
 let mailUtente = prompt("Quale è la tua email?");
 let listaMail = ["pippo@gmail.com" , "giada@tiscali.it", "nico@alice.it", "steeve@aruba.com"];
+let verificaInvitato = false;
 
+for (let i=0; i<listaMail.length; i++) {
+    let invitatoCorrente = listaMail[i];
 
-if (listaMail.includes(mailUtente)) {
+    if (invitatoCorrente == mailUtente) {
+        verificaInvitato = true;
+    }
+}
+
+if (verificaInvitato == true) {
     document.getElementById("inserimento-email").innerHTML= mailUtente + " è correttamente registrato, puoi entrare";
-}   else {
+} else {
     alert("email non registrata");
 }
+
+// Esercizio B
 
 let numeroSfidante = parseInt( prompt("Scegli un numero da 1 a 6"));
 
 
-if (numeroSfidante < 1 || numeroSfidante > 6 ||Number.isNaN(numeroSfidante)) {
+if (numeroSfidante < 1 || numeroSfidante > 6 || Number.isNaN(numeroSfidante)) {
     numeroSfidante = Math.floor( Math.random() * 6) + 1;
     alert("Puoi scegliere esclusivamente un numero tra 1 e 6, ormai sarai un numero casuale, ovvero " + numeroSfidante);
 }
